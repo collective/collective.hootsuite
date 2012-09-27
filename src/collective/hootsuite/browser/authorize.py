@@ -75,7 +75,7 @@ class SecondAuthorizeStep(BrowserView):
         resultat = json.loads(resultat_json)
 
         settings.token = resultat['access_token']
-        expires = datetime.datetime.now() + datetime.timedelta(seconds=resultat['expires_in'])
+        expires = datetime.datetime.fromtimestamp(resultat['expires_in'])
         settings.expires = unicode(expires.strftime("%d/%m/%Y %H:%M:%S"))
 
         self.context.REQUEST.RESPONSE.redirect('@@hootsuite-settings')

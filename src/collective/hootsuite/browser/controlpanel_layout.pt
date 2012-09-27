@@ -17,8 +17,8 @@
 
     <div id="connect-hootsuite">
         <ul>
-            <li><a href="" tal:attributes="href view/authurl">Connect</a></li>
-            <li><a href="" tal:attributes="href view/refreshurl">Refresh</a></li>
+            <li><a href="" tal:attributes="href view/authurl"><button>Connect</button></a></li>
+            <li><a href="" tal:attributes="href view/refreshurl"><button>Refresh</button></a></li>
         </ul>
 
     </div>
