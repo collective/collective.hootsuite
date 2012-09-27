@@ -30,12 +30,6 @@ At the hootsuite configuration panel (on plone control panel):
  every time one content of this type is published (depends on workflow published). If the content has
  a effective date (publication date) it will schedule the notification to that moment.
 
-Author
-======
-
-Ramon Navarro Bosch - r.navarro@iskra.cat
-
-
 Credits
 =======
 

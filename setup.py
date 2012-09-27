@@ -16,16 +16,16 @@ long_description = (
 
 setup(name='collective.hootsuite',
       version=version,
-      description="Connector for hootsuite",
+      description="Hootsuite Plone connector",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
+      keywords='hootsuite plone',
+      author='Ramon Navarro Bosch',
+      author_email='r.navarro@iskra.cat',
       url='http://svn.plone.org/svn/collective/',
       license='gpl',
       packages=find_packages('src'),
