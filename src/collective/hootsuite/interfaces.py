@@ -29,6 +29,10 @@ class IHootsuiteRegistry(Interface):
     client_id = schema.TextLine(title=u"Client ID",
                 description=u"")
 
+    hashtag = schema.TextLine(title=u"Hashtag",
+                description=u"",
+                required=False)
+
     secret_key = schema.TextLine(title=u"Secret Key",
                  description=u"")
 

@@ -3,6 +3,9 @@ from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 import datetime, time, urllib2, json, pytz, urllib
 from Products.ATContentTypes.utils import DT2dt
+import logging
+
+logger = logging.getLogger("collective.hootsuite")
 
 
 def update_on_modify(obj, event):
@@ -18,7 +21,7 @@ def update_on_modify(obj, event):
         services = []
         for socialId in settings.active_services:
             services.append(int(socialId.split(" ")[-1]))
-        title = obj.Title() + " " + obj.absolute_url()
+        title = obj.Title() + " " + obj.absolute_url() + " " + settings.hashtag
         if (datetime.datetime.now().replace(tzinfo=pytz.utc) > data):
             tosend = {'message': title, 'socialNetworks': services}
         else:
@@ -34,6 +37,8 @@ def update_on_modify(obj, event):
             response = urllib2.urlopen(req)
             resultat_json = response.read()
             resultat = json.loads(resultat_json)
+            logger.info("Added to HootSuite a event " + title + " " + json.dumps(resultat))
         except urllib2.HTTPError, error:
             contents = error.read()
             resultat = json.loads(contents)
+            logger.error("Error on added a Hootsuite event " + title + " " + json.dumps(resultat))
