@@ -34,4 +34,6 @@ Credits
 =======
 
 Developed by Iskra Desenvolupament SCCL (http://iskra.cat)
+
 Sponsored by Ajuntament de Sant Adrià de Besos
+
