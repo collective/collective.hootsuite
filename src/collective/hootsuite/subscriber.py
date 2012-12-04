@@ -22,7 +22,7 @@ def update_on_modify(obj, event):
         for socialId in settings.active_services:
             services.append(int(socialId.split(" ")[-1]))
         title = obj.Title() + " " + obj.absolute_url() + " " + settings.hashtag
-        if (datetime.datetime.now().replace(tzinfo=pytz.utc) > data):
+        if (datetime.datetime.now().replace(tzinfo=pytz.utc) > data.replace(tzinfo=pytz.utc)):
             tosend = {'message': title, 'socialNetworks': services}
         else:
             tosend = {'message': title, 'socialNetworks': services, 'sendLater': 1, 'sendAlert': 1, 'timestamp': time.mktime(data.timetuple())}

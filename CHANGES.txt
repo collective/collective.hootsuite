@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.1.1 (2012 - 12 - 4)
+----------------------
+
+- Bug error on non time zone aware plone dates
+  [ramon]
+
+
 1.1 (2012 - 11 - 21)
 --------------------
 
