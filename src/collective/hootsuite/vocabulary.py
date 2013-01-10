@@ -15,7 +15,7 @@ class HootsuiteIds(object):
             settings = registry.forInterface(IHootsuiteRegistry)
             terms = []
             for service in settings.possible_services:
-                terms.append(SimpleVocabulary.createTerm(service, service))
+                terms.append(SimpleVocabulary.createTerm(service, int(service.split(" ")[-1])))
             return SimpleVocabulary(terms)
         except:
             return SimpleVocabulary([])
