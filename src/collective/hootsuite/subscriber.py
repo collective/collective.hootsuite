@@ -13,7 +13,7 @@ def update_on_modify(obj, event):
     """
     registry = getUtility(IRegistry)
     settings = registry.forInterface(IHootsuiteRegistry)
-    if (obj.portal_type in settings.portal_types) and (event.new_state.id == 'published'):
+    if settings.portal_types and (obj.portal_type in settings.portal_types) and (event.new_state.id == 'published'):
         # Send the title to hootsuite
         dataDT = obj.getEffectiveDate()
         data = DT2dt(dataDT)
